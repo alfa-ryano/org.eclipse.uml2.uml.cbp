@@ -1,0 +1,21 @@
+/**
+ */
+package org.eclipse.uml2.uml;
+
+/**
+ * <!-- begin-user-doc -->
+ * A representation of the model object '<em><b>Literal Specification</b></em>'.
+ * <!-- end-user-doc -->
+ *
+ * <!-- begin-model-doc -->
+ * A LiteralSpecification identifies a literal constant being modeled.
+ * <p>From package UML::Values.</p>
+ * <!-- end-model-doc -->
+ *
+ *
+ * @see org.eclipse.uml2.uml.UMLPackage#getLiteralSpecification()
+ * @model abstract="true"
+ * @generated
+ */
+public interface LiteralSpecification extends ValueSpecification {
+} // LiteralSpecification

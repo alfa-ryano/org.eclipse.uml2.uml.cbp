@@ -1,19 +1,20 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: UML2 Metamodel for NeoEMF
-Bundle-SymbolicName: org.eclipse.uml2.uml;singleton:=true
+Bundle-SymbolicName: org.eclipse.uml2.uml.cbp;singleton:=true
 Bundle-Version: 1.0.0.qualifier
 Bundle-ClassPath: .
 Bundle-Activator: org.eclipse.uml2.uml.UMLPlugin$Implementation
 Bundle-Vendor: University of York
 Bundle-Localization: plugin
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Export-Package: UML,
+ UML.impl,
+ UML.util
 Require-Bundle: neoemf-core,
  org.eclipse.core.runtime,
  org.eclipse.emf.ecore;visibility:=reexport,
+ fr.inria.atlanmod.neoemf.core;visibility:=reexport,
  org.eclipse.uml2.types,
  org.eclipse.emf.ecore.xmi
 Bundle-ActivationPolicy: lazy
-Export-Package: org.eclipse.uml2.uml,
- org.eclipse.uml2.uml.internal.impl,
- org.eclipse.uml2.uml.util

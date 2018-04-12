@@ -94,14 +94,14 @@ public interface UMLPackage extends EPackage {
 	int ELEMENT_FEATURE_COUNT = 2;
 
 	/**
-	 * The meta object id for the '{@link UML.impl.PackageImpl <em>Package</em>}' class.
+	 * The meta object id for the '{@link UML.impl.PackageableElementImpl <em>Packageable Element</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see UML.impl.PackageImpl
-	 * @see UML.impl.UMLPackageImpl#getPackage()
+	 * @see UML.impl.PackageableElementImpl
+	 * @see UML.impl.UMLPackageImpl#getPackageableElement()
 	 * @generated
 	 */
-	int PACKAGE = 1;
+	int PACKAGEABLE_ELEMENT = 1;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -110,7 +110,7 @@ public interface UMLPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PACKAGE__NAME = ELEMENT__NAME;
+	int PACKAGEABLE_ELEMENT__NAME = ELEMENT__NAME;
 
 	/**
 	 * The feature id for the '<em><b>Visibility</b></em>' attribute.
@@ -119,25 +119,35 @@ public interface UMLPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PACKAGE__VISIBILITY = ELEMENT__VISIBILITY;
+	int PACKAGEABLE_ELEMENT__VISIBILITY = ELEMENT__VISIBILITY;
 
 	/**
-	 * The feature id for the '<em><b>Packaged Element</b></em>' reference list.
+	 * The feature id for the '<em><b>Packaged Element</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PACKAGE__PACKAGED_ELEMENT = ELEMENT_FEATURE_COUNT + 0;
+	int PACKAGEABLE_ELEMENT__PACKAGED_ELEMENT = ELEMENT_FEATURE_COUNT + 0;
 
 	/**
-	 * The number of structural features of the '<em>Package</em>' class.
+	 * The number of structural features of the '<em>Packageable Element</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PACKAGE_FEATURE_COUNT = ELEMENT_FEATURE_COUNT + 1;
+	int PACKAGEABLE_ELEMENT_FEATURE_COUNT = ELEMENT_FEATURE_COUNT + 1;
+
+	/**
+	 * The meta object id for the '{@link UML.impl.PackageImpl <em>Package</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see UML.impl.PackageImpl
+	 * @see UML.impl.UMLPackageImpl#getPackage()
+	 * @generated
+	 */
+	int PACKAGE = 2;
 
 	/**
 	 * The meta object id for the '{@link UML.impl.ModelImpl <em>Model</em>}' class.
@@ -147,7 +157,43 @@ public interface UMLPackage extends EPackage {
 	 * @see UML.impl.UMLPackageImpl#getModel()
 	 * @generated
 	 */
-	int MODEL = 2;
+	int MODEL = 3;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PACKAGE__NAME = PACKAGEABLE_ELEMENT__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Visibility</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PACKAGE__VISIBILITY = PACKAGEABLE_ELEMENT__VISIBILITY;
+
+	/**
+	 * The feature id for the '<em><b>Packaged Element</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PACKAGE__PACKAGED_ELEMENT = PACKAGEABLE_ELEMENT__PACKAGED_ELEMENT;
+
+	/**
+	 * The number of structural features of the '<em>Package</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PACKAGE_FEATURE_COUNT = PACKAGEABLE_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -168,7 +214,7 @@ public interface UMLPackage extends EPackage {
 	int MODEL__VISIBILITY = PACKAGE__VISIBILITY;
 
 	/**
-	 * The feature id for the '<em><b>Packaged Element</b></em>' reference list.
+	 * The feature id for the '<em><b>Packaged Element</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -193,7 +239,7 @@ public interface UMLPackage extends EPackage {
 	 * @see UML.impl.UMLPackageImpl#getTypedElement()
 	 * @generated
 	 */
-	int TYPED_ELEMENT = 3;
+	int TYPED_ELEMENT = 4;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -257,7 +303,7 @@ public interface UMLPackage extends EPackage {
 	 * @see UML.impl.UMLPackageImpl#getPrimitiveType()
 	 * @generated
 	 */
-	int PRIMITIVE_TYPE = 4;
+	int PRIMITIVE_TYPE = 5;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -278,7 +324,7 @@ public interface UMLPackage extends EPackage {
 	int PRIMITIVE_TYPE__VISIBILITY = PACKAGE__VISIBILITY;
 
 	/**
-	 * The feature id for the '<em><b>Packaged Element</b></em>' reference list.
+	 * The feature id for the '<em><b>Packaged Element</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -303,7 +349,7 @@ public interface UMLPackage extends EPackage {
 	 * @see UML.impl.UMLPackageImpl#getLiteralInteger()
 	 * @generated
 	 */
-	int LITERAL_INTEGER = 5;
+	int LITERAL_INTEGER = 6;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -324,7 +370,7 @@ public interface UMLPackage extends EPackage {
 	int LITERAL_INTEGER__VISIBILITY = PACKAGE__VISIBILITY;
 
 	/**
-	 * The feature id for the '<em><b>Packaged Element</b></em>' reference list.
+	 * The feature id for the '<em><b>Packaged Element</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -349,7 +395,7 @@ public interface UMLPackage extends EPackage {
 	 * @see UML.impl.UMLPackageImpl#getLiteralUnlimitedNatural()
 	 * @generated
 	 */
-	int LITERAL_UNLIMITED_NATURAL = 6;
+	int LITERAL_UNLIMITED_NATURAL = 7;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -370,7 +416,7 @@ public interface UMLPackage extends EPackage {
 	int LITERAL_UNLIMITED_NATURAL__VISIBILITY = PACKAGE__VISIBILITY;
 
 	/**
-	 * The feature id for the '<em><b>Packaged Element</b></em>' reference list.
+	 * The feature id for the '<em><b>Packaged Element</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -404,7 +450,7 @@ public interface UMLPackage extends EPackage {
 	 * @see UML.impl.UMLPackageImpl#getAttribute()
 	 * @generated
 	 */
-	int ATTRIBUTE = 7;
+	int ATTRIBUTE = 8;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -468,7 +514,7 @@ public interface UMLPackage extends EPackage {
 	 * @see UML.impl.UMLPackageImpl#getProperty()
 	 * @generated
 	 */
-	int PROPERTY = 8;
+	int PROPERTY = 9;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -586,7 +632,7 @@ public interface UMLPackage extends EPackage {
 	 * @see UML.impl.UMLPackageImpl#getParameter()
 	 * @generated
 	 */
-	int PARAMETER = 9;
+	int PARAMETER = 10;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -659,7 +705,7 @@ public interface UMLPackage extends EPackage {
 	 * @see UML.impl.UMLPackageImpl#getOperation()
 	 * @generated
 	 */
-	int OPERATION = 10;
+	int OPERATION = 11;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -680,7 +726,7 @@ public interface UMLPackage extends EPackage {
 	int OPERATION__VISIBILITY = PACKAGE__VISIBILITY;
 
 	/**
-	 * The feature id for the '<em><b>Packaged Element</b></em>' reference list.
+	 * The feature id for the '<em><b>Packaged Element</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -732,7 +778,7 @@ public interface UMLPackage extends EPackage {
 	 * @see UML.impl.UMLPackageImpl#getClass_()
 	 * @generated
 	 */
-	int CLASS = 11;
+	int CLASS = 12;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -753,7 +799,7 @@ public interface UMLPackage extends EPackage {
 	int CLASS__VISIBILITY = PACKAGE__VISIBILITY;
 
 	/**
-	 * The feature id for the '<em><b>Packaged Element</b></em>' reference list.
+	 * The feature id for the '<em><b>Packaged Element</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -823,7 +869,7 @@ public interface UMLPackage extends EPackage {
 	 * @see UML.impl.UMLPackageImpl#getInterface()
 	 * @generated
 	 */
-	int INTERFACE = 12;
+	int INTERFACE = 13;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -844,7 +890,7 @@ public interface UMLPackage extends EPackage {
 	int INTERFACE__VISIBILITY = CLASS__VISIBILITY;
 
 	/**
-	 * The feature id for the '<em><b>Packaged Element</b></em>' reference list.
+	 * The feature id for the '<em><b>Packaged Element</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -914,7 +960,7 @@ public interface UMLPackage extends EPackage {
 	 * @see UML.impl.UMLPackageImpl#getEnumerationLiteral()
 	 * @generated
 	 */
-	int ENUMERATION_LITERAL = 13;
+	int ENUMERATION_LITERAL = 14;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -935,7 +981,7 @@ public interface UMLPackage extends EPackage {
 	int ENUMERATION_LITERAL__VISIBILITY = PACKAGE__VISIBILITY;
 
 	/**
-	 * The feature id for the '<em><b>Packaged Element</b></em>' reference list.
+	 * The feature id for the '<em><b>Packaged Element</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -978,7 +1024,7 @@ public interface UMLPackage extends EPackage {
 	 * @see UML.impl.UMLPackageImpl#getEnumeration()
 	 * @generated
 	 */
-	int ENUMERATION = 14;
+	int ENUMERATION = 15;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -987,7 +1033,7 @@ public interface UMLPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENUMERATION__NAME = PACKAGE__NAME;
+	int ENUMERATION__NAME = CLASS__NAME;
 
 	/**
 	 * The feature id for the '<em><b>Visibility</b></em>' attribute.
@@ -996,16 +1042,61 @@ public interface UMLPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENUMERATION__VISIBILITY = PACKAGE__VISIBILITY;
+	int ENUMERATION__VISIBILITY = CLASS__VISIBILITY;
 
 	/**
-	 * The feature id for the '<em><b>Packaged Element</b></em>' reference list.
+	 * The feature id for the '<em><b>Packaged Element</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ENUMERATION__PACKAGED_ELEMENT = PACKAGE__PACKAGED_ELEMENT;
+	int ENUMERATION__PACKAGED_ELEMENT = CLASS__PACKAGED_ELEMENT;
+
+	/**
+	 * The feature id for the '<em><b>Owned Attribute</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ENUMERATION__OWNED_ATTRIBUTE = CLASS__OWNED_ATTRIBUTE;
+
+	/**
+	 * The feature id for the '<em><b>Owned Operation</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ENUMERATION__OWNED_OPERATION = CLASS__OWNED_OPERATION;
+
+	/**
+	 * The feature id for the '<em><b>Generalization</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ENUMERATION__GENERALIZATION = CLASS__GENERALIZATION;
+
+	/**
+	 * The feature id for the '<em><b>Template Binding</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ENUMERATION__TEMPLATE_BINDING = CLASS__TEMPLATE_BINDING;
+
+	/**
+	 * The feature id for the '<em><b>Nested Classifier</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ENUMERATION__NESTED_CLASSIFIER = CLASS__NESTED_CLASSIFIER;
 
 	/**
 	 * The feature id for the '<em><b>Owned Literal</b></em>' containment reference list.
@@ -1014,7 +1105,7 @@ public interface UMLPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENUMERATION__OWNED_LITERAL = PACKAGE_FEATURE_COUNT + 0;
+	int ENUMERATION__OWNED_LITERAL = CLASS_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of structural features of the '<em>Enumeration</em>' class.
@@ -1023,7 +1114,7 @@ public interface UMLPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENUMERATION_FEATURE_COUNT = PACKAGE_FEATURE_COUNT + 1;
+	int ENUMERATION_FEATURE_COUNT = CLASS_FEATURE_COUNT + 1;
 
 	/**
 	 * The meta object id for the '{@link UML.impl.GeneralizationImpl <em>Generalization</em>}' class.
@@ -1033,7 +1124,7 @@ public interface UMLPackage extends EPackage {
 	 * @see UML.impl.UMLPackageImpl#getGeneralization()
 	 * @generated
 	 */
-	int GENERALIZATION = 15;
+	int GENERALIZATION = 16;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1088,7 +1179,7 @@ public interface UMLPackage extends EPackage {
 	 * @see UML.impl.UMLPackageImpl#getAssociation()
 	 * @generated
 	 */
-	int ASSOCIATION = 16;
+	int ASSOCIATION = 17;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1109,7 +1200,7 @@ public interface UMLPackage extends EPackage {
 	int ASSOCIATION__VISIBILITY = PACKAGE__VISIBILITY;
 
 	/**
-	 * The feature id for the '<em><b>Packaged Element</b></em>' reference list.
+	 * The feature id for the '<em><b>Packaged Element</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -1152,7 +1243,7 @@ public interface UMLPackage extends EPackage {
 	 * @see UML.impl.UMLPackageImpl#getTemplateParameterSubstitution()
 	 * @generated
 	 */
-	int TEMPLATE_PARAMETER_SUBSTITUTION = 17;
+	int TEMPLATE_PARAMETER_SUBSTITUTION = 18;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1207,7 +1298,7 @@ public interface UMLPackage extends EPackage {
 	 * @see UML.impl.UMLPackageImpl#getTemplateBinding()
 	 * @generated
 	 */
-	int TEMPLATE_BINDING = 18;
+	int TEMPLATE_BINDING = 19;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1288,6 +1379,27 @@ public interface UMLPackage extends EPackage {
 	EAttribute getElement_Visibility();
 
 	/**
+	 * Returns the meta object for class '{@link UML.PackageableElement <em>Packageable Element</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Packageable Element</em>'.
+	 * @see UML.PackageableElement
+	 * @generated
+	 */
+	EClass getPackageableElement();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link UML.PackageableElement#getPackagedElement <em>Packaged Element</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Packaged Element</em>'.
+	 * @see UML.PackageableElement#getPackagedElement()
+	 * @see #getPackageableElement()
+	 * @generated
+	 */
+	EReference getPackageableElement_PackagedElement();
+
+	/**
 	 * Returns the meta object for class '{@link UML.Package <em>Package</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1296,17 +1408,6 @@ public interface UMLPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getPackage();
-
-	/**
-	 * Returns the meta object for the reference list '{@link UML.Package#getPackagedElement <em>Packaged Element</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Packaged Element</em>'.
-	 * @see UML.Package#getPackagedElement()
-	 * @see #getPackage()
-	 * @generated
-	 */
-	EReference getPackage_PackagedElement();
 
 	/**
 	 * Returns the meta object for class '{@link UML.Model <em>Model</em>}'.
@@ -1857,6 +1958,24 @@ public interface UMLPackage extends EPackage {
 		EAttribute ELEMENT__VISIBILITY = eINSTANCE.getElement_Visibility();
 
 		/**
+		 * The meta object literal for the '{@link UML.impl.PackageableElementImpl <em>Packageable Element</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see UML.impl.PackageableElementImpl
+		 * @see UML.impl.UMLPackageImpl#getPackageableElement()
+		 * @generated
+		 */
+		EClass PACKAGEABLE_ELEMENT = eINSTANCE.getPackageableElement();
+
+		/**
+		 * The meta object literal for the '<em><b>Packaged Element</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference PACKAGEABLE_ELEMENT__PACKAGED_ELEMENT = eINSTANCE.getPackageableElement_PackagedElement();
+
+		/**
 		 * The meta object literal for the '{@link UML.impl.PackageImpl <em>Package</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -1865,14 +1984,6 @@ public interface UMLPackage extends EPackage {
 		 * @generated
 		 */
 		EClass PACKAGE = eINSTANCE.getPackage();
-
-		/**
-		 * The meta object literal for the '<em><b>Packaged Element</b></em>' reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference PACKAGE__PACKAGED_ELEMENT = eINSTANCE.getPackage_PackagedElement();
 
 		/**
 		 * The meta object literal for the '{@link UML.impl.ModelImpl <em>Model</em>}' class.

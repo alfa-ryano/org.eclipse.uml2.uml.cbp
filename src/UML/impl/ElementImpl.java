@@ -7,7 +7,10 @@ import UML.UMLPackage;
 
 import fr.inria.atlanmod.neoemf.core.DefaultPersistentEObject;
 
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.emf.ecore.impl.EObjectImpl;
 
 /**
  * <!-- begin-user-doc -->

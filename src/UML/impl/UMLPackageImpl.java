@@ -13,6 +13,7 @@ import UML.LiteralInteger;
 import UML.LiteralUnlimitedNatural;
 import UML.Model;
 import UML.Operation;
+import UML.PackageableElement;
 import UML.Parameter;
 import UML.PrimitiveType;
 import UML.Property;
@@ -42,6 +43,13 @@ public class UMLPackageImpl extends EPackageImpl implements UMLPackage {
 	 * @generated
 	 */
 	private EClass elementEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass packageableElementEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -262,8 +270,8 @@ public class UMLPackageImpl extends EPackageImpl implements UMLPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getPackage() {
-		return packageEClass;
+	public EClass getPackageableElement() {
+		return packageableElementEClass;
 	}
 
 	/**
@@ -271,8 +279,17 @@ public class UMLPackageImpl extends EPackageImpl implements UMLPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getPackage_PackagedElement() {
-		return (EReference)packageEClass.getEStructuralFeatures().get(0);
+	public EReference getPackageableElement_PackagedElement() {
+		return (EReference)packageableElementEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getPackage() {
+		return packageEClass;
 	}
 
 	/**
@@ -730,8 +747,10 @@ public class UMLPackageImpl extends EPackageImpl implements UMLPackage {
 		createEAttribute(elementEClass, ELEMENT__NAME);
 		createEAttribute(elementEClass, ELEMENT__VISIBILITY);
 
+		packageableElementEClass = createEClass(PACKAGEABLE_ELEMENT);
+		createEReference(packageableElementEClass, PACKAGEABLE_ELEMENT__PACKAGED_ELEMENT);
+
 		packageEClass = createEClass(PACKAGE);
-		createEReference(packageEClass, PACKAGE__PACKAGED_ELEMENT);
 
 		modelEClass = createEClass(MODEL);
 
@@ -826,7 +845,8 @@ public class UMLPackageImpl extends EPackageImpl implements UMLPackage {
 		// Set bounds for type parameters
 
 		// Add supertypes to classes
-		packageEClass.getESuperTypes().add(this.getElement());
+		packageableElementEClass.getESuperTypes().add(this.getElement());
+		packageEClass.getESuperTypes().add(this.getPackageableElement());
 		modelEClass.getESuperTypes().add(this.getPackage());
 		typedElementEClass.getESuperTypes().add(this.getElement());
 		primitiveTypeEClass.getESuperTypes().add(this.getPackage());
@@ -839,7 +859,7 @@ public class UMLPackageImpl extends EPackageImpl implements UMLPackage {
 		classEClass.getESuperTypes().add(this.getPackage());
 		interfaceEClass.getESuperTypes().add(this.getClass_());
 		enumerationLiteralEClass.getESuperTypes().add(this.getPackage());
-		enumerationEClass.getESuperTypes().add(this.getPackage());
+		enumerationEClass.getESuperTypes().add(this.getClass_());
 		generalizationEClass.getESuperTypes().add(this.getElement());
 		associationEClass.getESuperTypes().add(this.getPackage());
 		templateParameterSubstitutionEClass.getESuperTypes().add(this.getElement());
@@ -850,8 +870,10 @@ public class UMLPackageImpl extends EPackageImpl implements UMLPackage {
 		initEAttribute(getElement_Name(), ecorePackage.getEString(), "name", null, 0, 1, Element.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getElement_Visibility(), ecorePackage.getEString(), "visibility", null, 0, 1, Element.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
+		initEClass(packageableElementEClass, PackageableElement.class, "PackageableElement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getPackageableElement_PackagedElement(), this.getPackage(), null, "packagedElement", null, 0, -1, PackageableElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+
 		initEClass(packageEClass, UML.Package.class, "Package", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getPackage_PackagedElement(), this.getPackage(), null, "packagedElement", null, 0, -1, UML.Package.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		initEClass(modelEClass, Model.class, "Model", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 

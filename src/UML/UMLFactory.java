@@ -22,6 +22,15 @@ public interface UMLFactory extends EFactory {
 	UMLFactory eINSTANCE = UML.impl.UMLFactoryImpl.init();
 
 	/**
+	 * Returns a new object of class '<em>Packageable Element</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Packageable Element</em>'.
+	 * @generated
+	 */
+	PackageableElement createPackageableElement();
+
+	/**
 	 * Returns a new object of class '<em>Package</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

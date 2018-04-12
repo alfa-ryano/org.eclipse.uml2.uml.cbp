@@ -6,9 +6,11 @@ import UML.Association;
 import UML.Property;
 import UML.UMLPackage;
 
+import java.util.Collection;
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 
 /**
  * <!-- begin-user-doc -->

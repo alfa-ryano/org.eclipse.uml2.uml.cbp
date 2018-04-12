@@ -3,6 +3,7 @@
 package UML;
 
 import fr.inria.atlanmod.neoemf.core.PersistentEObject;
+import org.eclipse.emf.ecore.EObject;
 
 /**
  * <!-- begin-user-doc -->

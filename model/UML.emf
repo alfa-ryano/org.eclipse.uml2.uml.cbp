@@ -3,96 +3,96 @@
 package UML;
 
 abstract class Element {
-	attr String name;
-	attr String visibility;
+  attr String name;
+  attr String visibility;
 }
 
-class Package extends Element {
-    !ordered ref Package[*] packagedElement;
+class PackageableElement extends Element {
+  !ordered val Package[*] packagedElement;
 }
 
-class Model extends Package {
-	 
-}
-
-class TypedElement extends Element {
-	ref Package type;
-    val LiteralInteger lowerValue;
-    val LiteralUnlimitedNatural upperValue;
-}
-
-class PrimitiveType extends Package {
-	
-}
-
-class LiteralInteger extends Package {
-	
-}
-
-class LiteralUnlimitedNatural extends Package {
-	attr int value;
-}
-
-class Attribute extends TypedElement {
-     
-}
-
-class Property extends Attribute {
-    attr boolean isStatic;
-    ref Association association;
-    !ordered val Property[*] qualifier;
-    ref Association owningAssociation;
-    ref Association associationEnd;
-    ref Interface ~interface;
-}
-
-class Parameter extends TypedElement {
-   attr String direction;
-}
-
-class Operation extends Package {
-	!ordered val Parameter[*] ownedParameter;
-	ref ~Class ~class;
-	ref Interface ~interface;
-}
-
-class ~Class extends Package {
-    !ordered val Attribute[*] ownedAttribute;
-    !ordered val Operation[*] ownedOperation;
-    !ordered val Generalization[*] generalization;
-    !ordered val TemplateBinding[*] templateBinding;
-    !ordered val ~Class[*] nestedClassifier;    
-}
-
-class Interface extends ~Class {
+class Package extends PackageableElement {
   
 }
 
-class EnumerationLiteral extends Package {
-    !ordered val Enumeration[*] classifier;
-    ref Enumeration enumeration;
+class Model extends Package {
 }
 
-class Enumeration extends ~Class {
-	!ordered val EnumerationLiteral[*] ownedLiteral;
+class TypedElement extends Element {
+  ref Package type;
+  val LiteralInteger lowerValue;
+  val LiteralUnlimitedNatural upperValue;
+}
+
+class PrimitiveType extends Package {
+}
+
+class LiteralInteger extends Package {
+}
+
+class LiteralUnlimitedNatural extends Package {
+  attr int value;
+}
+
+class Attribute extends TypedElement {
+}
+
+class Property extends Attribute {
+  attr boolean isStatic;
+  ref Association association;
+  !ordered val Property[*] qualifier;
+  ref Association owningAssociation;
+  ref Association associationEnd;
+  ref Interface ~interface;
+}
+
+class Parameter extends TypedElement {
+  attr String direction;
+}
+
+class Operation extends Package {
+  !ordered val Parameter[*] ownedParameter;
+  ref Class ~class;
+  ref Interface ~interface;
+}
+
+class Class extends Package {
+  !ordered val Attribute[*] ownedAttribute;
+  !ordered val Operation[*] ownedOperation;
+  !ordered val Generalization[*] generalization;
+  !ordered val TemplateBinding[*] templateBinding;
+  !ordered val Class[*] nestedClassifier;
+}
+
+class Interface extends Class {
+}
+
+class EnumerationLiteral extends Package {
+  !ordered val Enumeration[*] classifier;
+  ref Enumeration enumeration;
+}
+
+class Enumeration extends Class {
+  !ordered val EnumerationLiteral[*] ownedLiteral;
 }
 
 class Generalization extends Element {
-    ref ~Class general; 
-    ref ~Class specific;
+  ref Class general;
+  ref Class specific;
 }
 
 class Association extends Package {
-	!ordered ref Property[*] memberEnd;  
-	!ordered ref Property[*] ownedEnd;
+  !ordered ref Property[*] memberEnd;
+  !ordered ref Property[*] ownedEnd;
 }
 
 class TemplateParameterSubstitution extends Element {
-	val Package actual; 
-	ref TemplateBinding templateBinding;
+  val Package actual;
+  ref TemplateBinding templateBinding;
 }
 
 class TemplateBinding extends Element {
-	!ordered val TemplateParameterSubstitution[*] parameterSubstitution;
-	ref Package boundElement;
+  !ordered val TemplateParameterSubstitution[*] parameterSubstitution;
+  ref Package boundElement;
 }
+

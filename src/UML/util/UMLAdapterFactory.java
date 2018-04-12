@@ -13,6 +13,7 @@ import UML.LiteralInteger;
 import UML.LiteralUnlimitedNatural;
 import UML.Model;
 import UML.Operation;
+import UML.PackageableElement;
 import UML.Parameter;
 import UML.PrimitiveType;
 import UML.Property;
@@ -87,6 +88,10 @@ public class UMLAdapterFactory extends AdapterFactoryImpl {
 			@Override
 			public Adapter caseElement(Element object) {
 				return createElementAdapter();
+			}
+			@Override
+			public Adapter casePackageableElement(PackageableElement object) {
+				return createPackageableElementAdapter();
 			}
 			@Override
 			public Adapter casePackage(UML.Package object) {
@@ -191,6 +196,20 @@ public class UMLAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createElementAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link UML.PackageableElement <em>Packageable Element</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see UML.PackageableElement
+	 * @generated
+	 */
+	public Adapter createPackageableElementAdapter() {
 		return null;
 	}
 

@@ -12,6 +12,7 @@ import UML.LiteralInteger;
 import UML.LiteralUnlimitedNatural;
 import UML.Model;
 import UML.Operation;
+import UML.PackageableElement;
 import UML.Parameter;
 import UML.PrimitiveType;
 import UML.Property;
@@ -73,6 +74,7 @@ public class UMLFactoryImpl extends EFactoryImpl implements UMLFactory {
 	@Override
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
+			case UMLPackage.PACKAGEABLE_ELEMENT: return (EObject)createPackageableElement();
 			case UMLPackage.PACKAGE: return (EObject)createPackage();
 			case UMLPackage.MODEL: return (EObject)createModel();
 			case UMLPackage.TYPED_ELEMENT: return (EObject)createTypedElement();
@@ -94,6 +96,16 @@ public class UMLFactoryImpl extends EFactoryImpl implements UMLFactory {
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public PackageableElement createPackageableElement() {
+		PackageableElementImpl packageableElement = new PackageableElementImpl();
+		return packageableElement;
 	}
 
 	/**

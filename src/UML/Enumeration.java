@@ -20,7 +20,7 @@ import org.eclipse.emf.common.util.EList;
  * @model
  * @generated
  */
-public interface Enumeration extends UML.Package {
+public interface Enumeration extends UML.Class {
 	/**
 	 * Returns the value of the '<em><b>Owned Literal</b></em>' containment reference list.
 	 * The list contents are of type {@link UML.EnumerationLiteral}.

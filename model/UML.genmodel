@@ -14,10 +14,13 @@
       </genFeatures>
     </genClasses>
     <genClasses>
-      <ecoreClass href="UML.ecore#//Package"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true">
-        <ecoreFeature xsi:type="ecore:EReference" href="UML.ecore#//Package/packagedElement"/>
+      <ecoreClass href="UML.ecore#//PackageableElement"/>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="UML.ecore#//PackageableElement/packagedElement"/>
       </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="UML.ecore#//Package"/>
     </genClasses>
     <genClasses>
       <ecoreClass href="UML.ecore#//Model"/>

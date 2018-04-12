@@ -4,24 +4,24 @@ package UML.impl;
 
 import UML.UMLPackage;
 
+import java.util.Collection;
+import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.InternalEObject;
+import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.EObjectResolvingEList;
+import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
  * <!-- begin-user-doc -->
  * An implementation of the model object '<em><b>Package</b></em>'.
  * <!-- end-user-doc -->
- * <p>
- * The following features are implemented:
- * </p>
- * <ul>
- *   <li>{@link UML.impl.PackageImpl#getPackagedElement <em>Packaged Element</em>}</li>
- * </ul>
  *
  * @generated
  */
-public class PackageImpl extends ElementImpl implements UML.Package {
+public class PackageImpl extends PackageableElementImpl implements UML.Package {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -39,16 +39,6 @@ public class PackageImpl extends ElementImpl implements UML.Package {
 	@Override
 	protected EClass eStaticClass() {
 		return UMLPackage.Literals.PACKAGE;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@SuppressWarnings("unchecked")
-	public EList<UML.Package> getPackagedElement() {
-		return (EList<UML.Package>)eGet(UMLPackage.Literals.PACKAGE__PACKAGED_ELEMENT, true);
 	}
 
 } //PackageImpl

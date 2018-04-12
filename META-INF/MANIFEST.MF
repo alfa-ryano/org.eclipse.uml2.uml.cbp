@@ -11,10 +11,11 @@ Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Export-Package: UML,
  UML.impl,
  UML.util
-Require-Bundle: neoemf-core,
- org.eclipse.core.runtime,
+Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.emf.ecore;visibility:=reexport,
  fr.inria.atlanmod.neoemf.core;visibility:=reexport,
- org.eclipse.uml2.types,
- org.eclipse.emf.ecore.xmi
+ org.eclipse.emf.ecore.xmi,
+ org.junit,
+ neoemf-core;bundle-version="1.0.0",
+ org.eclipse.epsilon.cbp
 Bundle-ActivationPolicy: lazy

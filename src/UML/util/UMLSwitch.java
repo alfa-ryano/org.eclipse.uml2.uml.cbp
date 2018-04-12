@@ -13,6 +13,7 @@ import UML.LiteralInteger;
 import UML.LiteralUnlimitedNatural;
 import UML.Model;
 import UML.Operation;
+import UML.PackageableElement;
 import UML.Parameter;
 import UML.PrimitiveType;
 import UML.Property;
@@ -89,9 +90,17 @@ public class UMLSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
+			case UMLPackage.PACKAGEABLE_ELEMENT: {
+				PackageableElement packageableElement = (PackageableElement)theEObject;
+				T result = casePackageableElement(packageableElement);
+				if (result == null) result = caseElement(packageableElement);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
 			case UMLPackage.PACKAGE: {
 				UML.Package package_ = (UML.Package)theEObject;
 				T result = casePackage(package_);
+				if (result == null) result = casePackageableElement(package_);
 				if (result == null) result = caseElement(package_);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
@@ -100,6 +109,7 @@ public class UMLSwitch<T> extends Switch<T> {
 				Model model = (Model)theEObject;
 				T result = caseModel(model);
 				if (result == null) result = casePackage(model);
+				if (result == null) result = casePackageableElement(model);
 				if (result == null) result = caseElement(model);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
@@ -115,6 +125,7 @@ public class UMLSwitch<T> extends Switch<T> {
 				PrimitiveType primitiveType = (PrimitiveType)theEObject;
 				T result = casePrimitiveType(primitiveType);
 				if (result == null) result = casePackage(primitiveType);
+				if (result == null) result = casePackageableElement(primitiveType);
 				if (result == null) result = caseElement(primitiveType);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
@@ -123,6 +134,7 @@ public class UMLSwitch<T> extends Switch<T> {
 				LiteralInteger literalInteger = (LiteralInteger)theEObject;
 				T result = caseLiteralInteger(literalInteger);
 				if (result == null) result = casePackage(literalInteger);
+				if (result == null) result = casePackageableElement(literalInteger);
 				if (result == null) result = caseElement(literalInteger);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
@@ -131,6 +143,7 @@ public class UMLSwitch<T> extends Switch<T> {
 				LiteralUnlimitedNatural literalUnlimitedNatural = (LiteralUnlimitedNatural)theEObject;
 				T result = caseLiteralUnlimitedNatural(literalUnlimitedNatural);
 				if (result == null) result = casePackage(literalUnlimitedNatural);
+				if (result == null) result = casePackageableElement(literalUnlimitedNatural);
 				if (result == null) result = caseElement(literalUnlimitedNatural);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
@@ -164,6 +177,7 @@ public class UMLSwitch<T> extends Switch<T> {
 				Operation operation = (Operation)theEObject;
 				T result = caseOperation(operation);
 				if (result == null) result = casePackage(operation);
+				if (result == null) result = casePackageableElement(operation);
 				if (result == null) result = caseElement(operation);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
@@ -172,6 +186,7 @@ public class UMLSwitch<T> extends Switch<T> {
 				UML.Class class_ = (UML.Class)theEObject;
 				T result = caseClass(class_);
 				if (result == null) result = casePackage(class_);
+				if (result == null) result = casePackageableElement(class_);
 				if (result == null) result = caseElement(class_);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
@@ -181,6 +196,7 @@ public class UMLSwitch<T> extends Switch<T> {
 				T result = caseInterface(interface_);
 				if (result == null) result = caseClass(interface_);
 				if (result == null) result = casePackage(interface_);
+				if (result == null) result = casePackageableElement(interface_);
 				if (result == null) result = caseElement(interface_);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
@@ -189,6 +205,7 @@ public class UMLSwitch<T> extends Switch<T> {
 				EnumerationLiteral enumerationLiteral = (EnumerationLiteral)theEObject;
 				T result = caseEnumerationLiteral(enumerationLiteral);
 				if (result == null) result = casePackage(enumerationLiteral);
+				if (result == null) result = casePackageableElement(enumerationLiteral);
 				if (result == null) result = caseElement(enumerationLiteral);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
@@ -196,7 +213,9 @@ public class UMLSwitch<T> extends Switch<T> {
 			case UMLPackage.ENUMERATION: {
 				Enumeration enumeration = (Enumeration)theEObject;
 				T result = caseEnumeration(enumeration);
+				if (result == null) result = caseClass(enumeration);
 				if (result == null) result = casePackage(enumeration);
+				if (result == null) result = casePackageableElement(enumeration);
 				if (result == null) result = caseElement(enumeration);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
@@ -212,6 +231,7 @@ public class UMLSwitch<T> extends Switch<T> {
 				Association association = (Association)theEObject;
 				T result = caseAssociation(association);
 				if (result == null) result = casePackage(association);
+				if (result == null) result = casePackageableElement(association);
 				if (result == null) result = caseElement(association);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
@@ -246,6 +266,21 @@ public class UMLSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseElement(Element object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Packageable Element</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Packageable Element</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T casePackageableElement(PackageableElement object) {
 		return null;
 	}
 
